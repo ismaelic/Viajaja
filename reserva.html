@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="styles.css"/>
+<link rel="icon" type="image/png" href="icon.png" />
+<script src="inter.js"/></script>
+<title>Viajaja</title>
+</head>
+
+<body>
+
+	<div class="todo">
+	<header class="header">
+		<figure class="logo">
+			<img src="logo.png" width="200" alt="logo" />
+			<div class="menu">
+				<a href="index.html">Home</a>
+				<a href="index.html#top">Top semana</a>
+				<a href="reserva.html#reserva"  class="activo">Reserva</a>
+				<a href="destinos.html">Destinos</a>
+				<a href="precios.html">Precios</a>
+				<a href="contacto.html">Contacto</a>
+			</div>		
+		</figure>
+
+			<div class="portada">
+				<h1>Viaja con una sonrisa ;)</h1>
+				<h3>Viajes felices de principio a fin y si es posible sin fin</h3>
+				<a href="destinos.html#des" class="button">Conoce más</a>
+				
+			</div>
+	</header>
+	<br>
+		<form action="#" method="post" class="viaje" id="reserva" onsubmit="return reserva()">
+		<fieldset>
+			<legend><h1>ORIGEN, DESTINO Y FECHA</h1></legend>
+			<label for="origen" >
+				<select required id="origen">
+					<option value="Barcelona">Barcelona</option>
+					<option value="Girona">Girona</option>
+					<option value="Madrid">Madrid</option>
+					<option value="Bilbao">Bilbao</option>
+					<option value="Valencia">Valencia</option>
+				</select>Origen
+			</label>
+			<label for="destino" id="destino">
+				<select required>
+					<option value="London">London</option>
+					<option value="Tokio">Tokio</option>
+					<option value="Minokos" >Minokos</option>
+					<option value="Paris">Paris</option>
+					<option value="New_York">New York</option>
+					<option value="Rio_de_Janeiro">Rio de Janeiro</option>
+					<option value="Seul">Seúl</option>
+					<option value="Tailandia">Tailandia</option>
+					<option value="Egipto">Egipto</option>
+					<option value="Marruecos">Marruecos</option>
+					<option value="Jordania">Jordania</option>
+					<option value="Montañas">Montañas</option>
+					<option value="Desiertos">Desiertos</option>
+					<option value="Playas_e_islas">Playas e islas</option>
+				</select>Destino
+			</label>
+			
+			<label for="ida_y_vuelta"></label>
+				<input type="radio" required  name="ida_y_vuelta" checked value="solo_ida">Sólo ida</label>
+				<input type="radio" required  name="ida_y_vuelta" value="ida_y_vuelta">Ida y vuelta</label>
+			</label>
+			
+			<label for="date">
+				<input type="date" required name="fecha" id="salida"/>Fecha de salida
+			</label>
+			
+			<label for="date">
+				<input type="date" required name="fecha" id="vuelta" />Fecha de vuelta
+			</label>
+			
+			<label for="submit">
+				<a href="reserva.html#reserva"><input class="button" type="submit" name="submit" value="Reservar"/></a>
+			</label>
+			
+			<br>
+			</fieldset>
+		</form>	
+	<br>
+	<form action="#" method="post" id="formulario" onsubmit="return validaForm()">
+		<fieldset>
+			<legend><h1>Haga su reserva en menos de 3 minutos</h1></legend>
+	
+		<div class="identificacion"><br>
+			<h2>Datos del comprador</h2><br>
+			<label for="N_A">Nombre y apellidos:</label><br>
+			<input type="text" name="datos" required placeholder="Nombre y apellidos" style="width:250px"/><br>
+			<label for="date">Fecha de nacimiento:</label><br>
+			<input type="date" name="fecha" value="date"/><br>
+			<label for="DNI">DNI:</label><br>
+			<input type="number" name="DNI" maxlength="9" required placeholder="0-9"/>-
+			<input type="text"   name="DNI_l" width="1" placeholder="A-Z" maxlength="1" style="width:35px" onsubmit="return validaDNI(DNI,DNI-l)"/><br>
+			<label for="E-mail">E-mail:</label><br>
+			<input type="email" id="E-mail" name="email" required placeholder="E-mail"/><br>
+			<label for="contrasena">Contraseña:</label><br>
+			<input type="password" id="contrasena" name="contrasena" maxlength="20" required placeholder="Contraseña"/><br><br>
+		</div>
+		<div class="tipo_cliente">
+			<h2>Tipo de cliente</h2>
+			<label for="particular"><br>
+				<input type="radio" id="particular" checked required name="tipo_cliente" value="particular"/>Particular
+			</label>
+			<label for="empresa">
+				<input type="radio" id="empresa" name="tipo_cliente" value="empresa" />Empresa
+			</label>
+		</div>
+		<div class="pasajeros">
+			<label for="N_pasajeros">Número de pasajeros
+				<input type="number" id="N_pasajeros" required name="pasajeros" placeholder="0-9" style="width:40px"/><br>
+			</label>
+			<label for="option">
+				Clase:    
+				<select>
+					<option value="Economico">Economico</option>
+					<option value="2Class">2ª Clase</option>
+					<option value="1Class">1ª Clase</option>
+				</select>
+			</label><br>
+
+<br>
+		<label for="submit">
+			<a href="index.html"><input class="button" type="submit" required id="submit" name="submit"></a>
+		</label>
+		
+	</div>
+</body>
